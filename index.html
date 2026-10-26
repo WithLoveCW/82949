@@ -119,6 +119,15 @@
     overflow-wrap: break-word;
   }
 
+    #backgroundImage {
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+
+#backgroundImage.fade-in {
+  opacity: 1;
+}
+    
    .sc__container canvas {
     position: absolute;
     top: 0;
@@ -358,7 +367,7 @@
 
         if (typeof confetti !== "function") return;
 
-        const COLORS = ["#D62828", "#198754", "#D4AF37"];
+        const COLORS = ["#1E5AA8", "#5DADE2", "#B8DFFF"];
 
         confetti({
           ticks: 350,
