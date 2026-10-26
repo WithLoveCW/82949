@@ -119,6 +119,15 @@
     overflow-wrap: break-word;
   }
 
+    #backgroundImage {
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+
+#backgroundImage.fade-in {
+  opacity: 1;
+}
+    
    .sc__container canvas {
     position: absolute;
     top: 0;
@@ -348,6 +357,7 @@
       }
 
       function launchConfetti() {
+        backgroundImage.classList.add("fade-in");
         const winSound = document.getElementById("winSound");
         if (winSound) {
           winSound.currentTime = 0;
@@ -358,7 +368,7 @@
 
         if (typeof confetti !== "function") return;
 
-        const COLORS = ["#D62828", "#198754", "#D4AF37"];
+        const COLORS = ["#0B3D91", "#1769AA", "#278BD2", "#72BCEB", "#B9E4FF", "#E1F4FF"];
 
         confetti({
           ticks: 350,
