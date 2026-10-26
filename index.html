@@ -119,22 +119,22 @@
     overflow-wrap: break-word;
   }
 
-    #backgroundImage {
-  opacity: 0;
+
+    
+  .sc__container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
   transition: opacity 1.8s ease-in-out;
 }
 
-#backgroundImage.fade-in {
-  opacity: 1;
+#scratchCanvas.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
-    
-   .sc__container canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
   }
   </style>
 
@@ -357,6 +357,7 @@
       }
 
       function launchConfetti() {
+        canvas.classList.add("fade-out");
         const winSound = document.getElementById("winSound");
         if (winSound) {
           winSound.currentTime = 0;
